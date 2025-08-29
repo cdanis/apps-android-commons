@@ -60,6 +60,7 @@ class NetworkingModule {
         .connectTimeout(120, TimeUnit.SECONDS)
         .writeTimeout(120, TimeUnit.SECONDS)
         .addInterceptor(httpLoggingInterceptor)
+        .addInterceptor(CommonHeaderRequestInterceptor())
         .readTimeout(120, TimeUnit.SECONDS)
         .cache(Cache(File(context.cacheDir, "okHttpCache"), OK_HTTP_CACHE_SIZE))
         .build()
